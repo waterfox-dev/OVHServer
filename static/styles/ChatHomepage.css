@@ -1,0 +1,14 @@
+body {
+    background-color: #232323;
+    color: #CDCDCD;
+}
+
+.ChatBox {
+    border: solid;
+    border-radius: 0.2ch;
+    border-width: 0.5px;
+    border-color: aliceblue;
+
+    margin-left: 10%;
+    margin-right: 10%;
+}
