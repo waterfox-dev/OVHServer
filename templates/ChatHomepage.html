@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<head>
+<html>
     <head>
         <title>Dynamic Python Chat</title>
 	    <link href = "{{ url_for('static', filename='styles/ChatHomepage.css') }}" rel = "stylesheet">
@@ -9,6 +9,17 @@
         <hr>
         <div class = "ChatBox">
             <h3>Current Chat</h3>
+            {% for data in messages%}
+                <p>{{data['author']}} - {{data['content']}}</p>
+            {% endfor %}
+            <form action = "{{url_for('dpc_publish')}}" method="POST">
+                <input type="text" name="author" id="author" placeholder="Your Name"> 
+                <input type="text" name="message" id="message" placeholder="Your Message">
+                <input type="submit">
+            </form>
         </div>
+        <form action = "{{url_for('dpc_homepage')}}">
+            <button>Refresh</button>
+        </form> 
     </body>
-</head>
+</html>
